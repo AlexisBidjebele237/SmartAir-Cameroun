@@ -19,10 +19,13 @@ WORKDIR /app
 COPY --from=builder /root/.local /root/.local
 ENV PATH=/root/.local/bin:$PATH
 
-# Copy application code
-COPY . .
+# Copy application code into a 'backend' subdirectory to preserve package structure
+COPY . ./backend/
+
+# Ensure the app can find the backend package
+ENV PYTHONPATH=/app
 
 EXPOSE 8000
 
-# Command to run the application
+# Command to run the application using the module path
 CMD ["python", "-m", "uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
