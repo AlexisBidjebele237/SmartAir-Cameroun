@@ -1,0 +1,14 @@
+fastapi
+uvicorn
+gunicorn
+pandas
+numpy
+xgboost
+scikit-learn
+openpyxl
+requests
+openmeteo-requests
+requests-cache
+retry-requests
+python-multipart
+jinja2
