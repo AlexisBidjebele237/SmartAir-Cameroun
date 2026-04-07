@@ -1,0 +1,274 @@
+=== ANALYSE COMPLETE DU DATASET SMARTAIR CAMEROON ===
+Fichier : data/Dataset_complet_Meteo.xlsx
+
+============================================================
+1. DIMENSIONS DU DATASET
+============================================================
+   Nombre de lignes   : 87240
+   Nombre de colonnes : 26
+
+============================================================
+2. COLONNES ET TYPES DE DONNEES
+============================================================
+   id                                       | Type: int64           | Non-null:  87240 | Null:     0
+   time                                     | Type: datetime64[us]  | Non-null:  87240 | Null:     0
+   weather_code                             | Type: int64           | Non-null:  87240 | Null:     0
+   temperature_2m_max                       | Type: object          | Non-null:  87240 | Null:     0
+   temperature_2m_min                       | Type: object          | Non-null:  87240 | Null:     0
+   temperature_2m_mean                      | Type: object          | Non-null:  87240 | Null:     0
+   apparent_temperature_max                 | Type: object          | Non-null:  87240 | Null:     0
+   apparent_temperature_min                 | Type: object          | Non-null:  87240 | Null:     0
+   apparent_temperature_mean                | Type: object          | Non-null:  87240 | Null:     0
+   sunrise                                  | Type: datetime64[us]  | Non-null:  87240 | Null:     0
+   sunset                                   | Type: datetime64[us]  | Non-null:  87240 | Null:     0
+   daylight_duration                        | Type: float64         | Non-null:  87240 | Null:     0
+   sunshine_duration                        | Type: object          | Non-null:  87240 | Null:     0
+   precipitation_sum                        | Type: object          | Non-null:  87240 | Null:     0
+   rain_sum                                 | Type: object          | Non-null:  87240 | Null:     0
+   snowfall_sum                             | Type: float64         | Non-null:  87240 | Null:     0
+   precipitation_hours                      | Type: float64         | Non-null:  87240 | Null:     0
+   wind_speed_10m_max                       | Type: object          | Non-null:  87240 | Null:     0
+   wind_gusts_10m_max                       | Type: object          | Non-null:  87240 | Null:     0
+   wind_direction_10m_dominant              | Type: int64           | Non-null:  87240 | Null:     0
+   shortwave_radiation_sum                  | Type: object          | Non-null:  87240 | Null:     0
+   et0_fao_evapotranspiration               | Type: object          | Non-null:  87240 | Null:     0
+   city                                     | Type: str             | Non-null:  87240 | Null:     0
+   region                                   | Type: str             | Non-null:  87240 | Null:     0
+   latitude                                 | Type: object          | Non-null:  87240 | Null:     0
+   longitude                                | Type: object          | Non-null:  87240 | Null:     0
+
+============================================================
+3. PREMIERS ENREGISTREMENTS (5 lignes)
+============================================================
+   id       time  weather_code   temperature_2m_max   temperature_2m_min  temperature_2m_mean apparent_temperature_max apparent_temperature_min apparent_temperature_mean             sunrise              sunset  daylight_duration sunshine_duration precipitation_sum rain_sum  snowfall_sum  precipitation_hours   wind_speed_10m_max   wind_gusts_10m_max  wind_direction_10m_dominant shortwave_radiation_sum et0_fao_evapotranspiration   city  region latitude longitude
+0   1 2020-01-01             3                 33.2  2026-09-21 00:00:00  2026-05-26 00:00:00                     34.0      2026-06-25 00:00:00       2026-01-29 00:00:00 2020-01-01 06:22:00 2020-01-01 18:13:00           42666.35          36009.06               0.0      0.0           0.0                  0.0  2026-05-10 00:00:00  2026-05-24 00:00:00                          132                   20.18                       4.59  Bafia  Centre     4.75     11.23
+1   2 2020-01-02             3                 31.9  2026-09-21 00:00:00  2026-09-25 00:00:00      2026-01-31 00:00:00      2026-03-23 00:00:00                      27.0 2020-01-02 06:23:00 2020-01-02 18:14:00           42670.10          38715.58               0.0      0.0           0.0                  0.0  2026-05-08 00:00:00  2026-06-25 00:00:00                           77                   19.39                       4.64  Bafia  Centre     4.75     11.23
+2   3 2020-01-03             3                 32.0  2026-03-19 00:00:00                 25.0      2026-07-31 00:00:00      2026-02-19 00:00:00       2026-01-25 00:00:00 2020-01-03 06:23:00 2020-01-03 18:14:00           42674.18          39188.73               0.0      0.0           0.0                  0.0  2026-09-08 00:00:00  2026-09-25 00:00:00                           65     2026-03-20 00:00:00                       4.78  Bafia  Centre     4.75     11.23
+3   4 2020-01-04             3  2026-05-31 00:00:00  2026-01-19 00:00:00  2026-07-24 00:00:00                     32.3      2026-07-20 00:00:00       2026-04-25 00:00:00 2020-01-04 06:24:00 2020-01-04 18:15:00           42678.57          39220.31               0.0      0.0           0.0                  0.0  2026-02-11 00:00:00  2026-02-20 00:00:00                          106                   20.48                       4.59  Bafia  Centre     4.75     11.23
+4   5 2020-01-05             3                 31.9  2026-03-19 00:00:00  2026-08-24 00:00:00                     33.1      2026-03-20 00:00:00       2026-09-25 00:00:00 2020-01-05 06:24:00 2020-01-05 18:15:00           42683.27          39251.72               0.0      0.0           0.0                  0.0  2026-03-11 00:00:00  2026-08-23 00:00:00                          100                   19.98                       4.39  Bafia  Centre     4.75     11.23
+
+============================================================
+4. STATISTIQUES DESCRIPTIVES (colonnes numeriques)
+============================================================
+   Colonnes numeriques : ['id', 'weather_code', 'daylight_duration', 'snowfall_sum', 'precipitation_hours', 'wind_direction_10m_dominant']
+
+                id  weather_code  daylight_duration  snowfall_sum  precipitation_hours  wind_direction_10m_dominant
+count  87240.00000  87240.000000       87240.000000       87240.0         87240.000000                 87240.000000
+mean    2617.70000     40.556385       43645.372588           0.0             5.879184                   185.365326
+std     1880.39875     25.739631         912.377029           0.0             6.052920                    95.195610
+min        1.00000      0.000000       41097.380000           0.0             0.000000                     0.000000
+25%     1148.00000      3.000000       42970.900000           0.0             0.000000                   108.000000
+50%     2318.00000     51.000000       43640.315000           0.0             4.000000                   210.000000
+75%     3681.00000     61.000000       44318.552500           0.0            10.000000                   260.000000
+max     8724.00000     65.000000       46198.170000           0.0            24.000000                   360.000000
+
+============================================================
+5. VALEURS MANQUANTES
+============================================================
+   [OK       ] id                                       | Manquantes:      0 ( 0.00%)
+   [OK       ] time                                     | Manquantes:      0 ( 0.00%)
+   [OK       ] weather_code                             | Manquantes:      0 ( 0.00%)
+   [OK       ] temperature_2m_max                       | Manquantes:      0 ( 0.00%)
+   [OK       ] temperature_2m_min                       | Manquantes:      0 ( 0.00%)
+   [OK       ] temperature_2m_mean                      | Manquantes:      0 ( 0.00%)
+   [OK       ] apparent_temperature_max                 | Manquantes:      0 ( 0.00%)
+   [OK       ] apparent_temperature_min                 | Manquantes:      0 ( 0.00%)
+   [OK       ] apparent_temperature_mean                | Manquantes:      0 ( 0.00%)
+   [OK       ] sunrise                                  | Manquantes:      0 ( 0.00%)
+   [OK       ] sunset                                   | Manquantes:      0 ( 0.00%)
+   [OK       ] daylight_duration                        | Manquantes:      0 ( 0.00%)
+   [OK       ] sunshine_duration                        | Manquantes:      0 ( 0.00%)
+   [OK       ] precipitation_sum                        | Manquantes:      0 ( 0.00%)
+   [OK       ] rain_sum                                 | Manquantes:      0 ( 0.00%)
+   [OK       ] snowfall_sum                             | Manquantes:      0 ( 0.00%)
+   [OK       ] precipitation_hours                      | Manquantes:      0 ( 0.00%)
+   [OK       ] wind_speed_10m_max                       | Manquantes:      0 ( 0.00%)
+   [OK       ] wind_gusts_10m_max                       | Manquantes:      0 ( 0.00%)
+   [OK       ] wind_direction_10m_dominant              | Manquantes:      0 ( 0.00%)
+   [OK       ] shortwave_radiation_sum                  | Manquantes:      0 ( 0.00%)
+   [OK       ] et0_fao_evapotranspiration               | Manquantes:      0 ( 0.00%)
+   [OK       ] city                                     | Manquantes:      0 ( 0.00%)
+   [OK       ] region                                   | Manquantes:      0 ( 0.00%)
+   [OK       ] latitude                                 | Manquantes:      0 ( 0.00%)
+   [OK       ] longitude                                | Manquantes:      0 ( 0.00%)
+
+============================================================
+6. LISTE DES VILLES
+============================================================
+   Nombre de villes : 40
+
+     1. Abong-Mbang               : 2181 observations
+     2. Akonolinga                : 2181 observations
+     3. Ambam                     : 2181 observations
+     4. Bafia                     : 2181 observations
+     5. Bafoussam                 : 2181 observations
+     6. Bamenda                   : 2181 observations
+     7. Batouri                   : 2181 observations
+     8. Bertoua                   : 2181 observations
+     9. Buea                      : 2181 observations
+    10. Douala                    : 2181 observations
+    11. Dschang                   : 2181 observations
+    12. Ebolowa                   : 2181 observations
+    13. Edea                      : 2181 observations
+    14. Foumban                   : 2181 observations
+    15. Garoua                    : 2181 observations
+    16. Guider                    : 2181 observations
+    17. Kousseri                  : 2181 observations
+    18. Kribi                     : 2181 observations
+    19. Kumba                     : 2181 observations
+    20. Kumbo                     : 2181 observations
+    21. Limbe                     : 2181 observations
+    22. Loum                      : 2181 observations
+    23. Mamfe                     : 2181 observations
+    24. Maroua                    : 2181 observations
+    25. Mbalmayo                  : 2181 observations
+    26. Mbengwi                   : 2181 observations
+    27. Mbouda                    : 2181 observations
+    28. Meiganga                  : 2181 observations
+    29. Mokolo                    : 2181 observations
+    30. Ngaoundere                : 2181 observations
+    31. Nkongsamba                : 2181 observations
+    32. Poli                      : 2181 observations
+    33. Sangmelima                : 2181 observations
+    34. Tibati                    : 2181 observations
+    35. Tignere                   : 2181 observations
+    36. Touboro                   : 2181 observations
+    37. Wum                       : 2181 observations
+    38. Yagoua                    : 2181 observations
+    39. Yaounde                   : 2181 observations
+    40. Yokadouma                 : 2181 observations
+
+============================================================
+7. REGIONS DU CAMEROUN
+============================================================
+   Nombre de regions : 10
+
+     1. Adamaoua                  : 8724 observations
+     2. Centre                    : 8724 observations
+     3. Est                       : 8724 observations
+     4. Extreme-Nord              : 8724 observations
+     5. Littoral                  : 8724 observations
+     6. Nord                      : 8724 observations
+     7. Nord-Ouest                : 8724 observations
+     8. Ouest                     : 8724 observations
+     9. Sud                       : 8724 observations
+    10. Sud-Ouest                 : 8724 observations
+
+============================================================
+8. PLAGE TEMPORELLE
+============================================================
+   Date de debut : 2020-01-01 00:00:00
+   Date de fin   : 2025-12-20 00:00:00
+   Duree totale  : 2180 jours
+
+============================================================
+9. COORDONNEES GEOGRAPHIQUES PAR VILLE
+============================================================
+   Abong-Mbang               | Region: Est                  | Lat:   3.9800 | Lon:  13.1700
+   Akonolinga                | Region: Centre               | Lat:   3.7700 | Lon:  12.2500
+   Ambam                     | Region: Sud                  | Lat:   2.3800 | Lon:  11.2800
+   Bafia                     | Region: Centre               | Lat:   4.7500 | Lon:  11.2300
+   Bafoussam                 | Region: Ouest                | Lat:   5.4800 | Lon:  10.4200
+   Bamenda                   | Region: Nord-Ouest           | Lat:   5.9600 | Lon:  10.1500
+   Batouri                   | Region: Est                  | Lat:   4.4300 | Lon:  14.3600
+   Bertoua                   | Region: Est                  | Lat:   4.5700 | Lon:  13.6800
+   Buea                      | Region: Sud-Ouest            | Lat:   4.1500 | Lon:   9.2400
+   Douala                    | Region: Littoral             | Lat:   0.0000 | Lon:   0.0000
+   Dschang                   | Region: Ouest                | Lat:   5.4400 | Lon:   0.0000
+   Ebolowa                   | Region: Sud                  | Lat:   2.9100 | Lon:  11.1500
+   Edea                      | Region: Littoral             | Lat:   0.0000 | Lon:  10.1300
+   Foumban                   | Region: Ouest                | Lat:   5.7200 | Lon:   0.0000
+   Garoua                    | Region: Nord                 | Lat:   0.0000 | Lon:   0.0000
+   Guider                    | Region: Nord                 | Lat:   9.9300 | Lon:  13.9400
+   Kousseri                  | Region: Extreme-Nord         | Lat:   0.0000 | Lon:   0.0000
+   Kribi                     | Region: Sud                  | Lat:   2.9500 | Lon:   9.9100
+   Kumba                     | Region: Sud-Ouest            | Lat:   4.6300 | Lon:   9.4400
+   Kumbo                     | Region: Nord-Ouest           | Lat:   0.0000 | Lon:  10.6600
+   Limbe                     | Region: Sud-Ouest            | Lat:   0.0000 | Lon:   9.2100
+   Loum                      | Region: Littoral             | Lat:   4.7100 | Lon:   9.7300
+   Mamfe                     | Region: Sud-Ouest            | Lat:   5.7500 | Lon:   9.3100
+   Maroua                    | Region: Extreme-Nord         | Lat:  10.5900 | Lon:  14.3200
+   Mbalmayo                  | Region: Centre               | Lat:   3.5100 | Lon:   0.0000
+   Mbengwi                   | Region: Nord-Ouest           | Lat:   5.9900 | Lon:   0.0000
+   Mbouda                    | Region: Ouest                | Lat:   5.6200 | Lon:  10.2500
+   Meiganga                  | Region: Adamaoua             | Lat:   6.5200 | Lon:  14.2900
+   Mokolo                    | Region: Extreme-Nord         | Lat:  10.7400 | Lon:   0.0000
+   Ngaoundere                | Region: Adamaoua             | Lat:   7.3200 | Lon:  13.5800
+   Nkongsamba                | Region: Littoral             | Lat:   4.9500 | Lon:   9.9300
+   Poli                      | Region: Nord                 | Lat:   8.4700 | Lon:  13.2400
+   Sangmelima                | Region: Sud                  | Lat:   2.9300 | Lon:  11.9800
+   Tibati                    | Region: Adamaoua             | Lat:   6.4600 | Lon:  12.6200
+   Tignere                   | Region: Adamaoua             | Lat:   7.3700 | Lon:  12.6500
+   Touboro                   | Region: Nord                 | Lat:   7.7600 | Lon:  15.3600
+   Wum                       | Region: Nord-Ouest           | Lat:   6.3800 | Lon:   0.0000
+   Yagoua                    | Region: Extreme-Nord         | Lat:  10.3400 | Lon:  15.2300
+   Yaounde                   | Region: Centre               | Lat:   3.8500 | Lon:   0.0000
+   Yokadouma                 | Region: Est                  | Lat:   3.5100 | Lon:   0.0000
+
+============================================================
+10. MATRICE DE CORRELATIONS
+============================================================
+                             weather_code  daylight_duration  snowfall_sum  precipitation_hours  wind_direction_10m_dominant
+weather_code                        1.000              0.488           NaN                0.714                        0.305
+daylight_duration                   0.488              1.000           NaN                0.362                        0.327
+snowfall_sum                          NaN                NaN           NaN                  NaN                          NaN
+precipitation_hours                 0.714              0.362           NaN                1.000                        0.219
+wind_direction_10m_dominant         0.305              0.327           NaN                0.219                        1.000
+
+============================================================
+11. ANALYSE SAISONNIERE
+============================================================
+   Saison seche  (Nov-Mar) : 35880 observations
+   Saison humide (Avr-Oct) : 51360 observations
+
+   temperature_2m_mean :
+      Saison seche  : 26.35
+      Saison humide : 26.34
+
+   precipitation_sum :
+      Saison seche  : 0.37
+      Saison humide : 4.81
+
+   wind_speed_10m_max :
+      Saison seche  : 13.11
+      Saison humide : 11.49
+
+   shortwave_radiation_sum :
+      Saison seche  : 20.21
+      Saison humide : 17.26
+
+============================================================
+12. VALEURS UNIQUES (colonnes non-numeriques)
+============================================================
+   time                                     : 2181 valeurs uniques
+   temperature_2m_max                       : 275 valeurs uniques
+   temperature_2m_min                       : 220 valeurs uniques
+   temperature_2m_mean                      : 227 valeurs uniques
+   apparent_temperature_max                 : 270 valeurs uniques
+   apparent_temperature_min                 : 273 valeurs uniques
+   apparent_temperature_mean                : 244 valeurs uniques
+   sunrise                                  : 46765 valeurs uniques
+   sunset                                   : 46448 valeurs uniques
+   sunshine_duration                        : 78438 valeurs uniques
+   precipitation_sum                        : 786 valeurs uniques
+   rain_sum                                 : 786 valeurs uniques
+   wind_speed_10m_max                       : 291 valeurs uniques
+   wind_gusts_10m_max                       : 155 valeurs uniques
+   shortwave_radiation_sum                  : 2034 valeurs uniques
+   et0_fao_evapotranspiration               : 935 valeurs uniques
+   city                                     : 40 valeurs uniques
+   region                                   : 10 valeurs uniques
+      - Adamaoua
+      - Centre
+      - Est
+      - Extreme-Nord
+      - Littoral
+      - Nord
+      - Nord-Ouest
+      - Ouest
+      - Sud
+      - Sud-Ouest
+
+============================================================
+=== FIN DE L'ANALYSE ===
+============================================================

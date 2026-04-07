@@ -1,0 +1,18 @@
+[
+  "temperature_2m_mean",
+  "precipitation_sum",
+  "wind_speed_10m_max",
+  "shortwave_radiation_sum",
+  "et0_fao_evapotranspiration",
+  "month",
+  "day_of_year",
+  "is_dry_season",
+  "temp_lag1",
+  "temp_lag7",
+  "wind_lag1",
+  "temp_roll7",
+  "latitude",
+  "longitude",
+  "region_enc",
+  "city_enc"
+]

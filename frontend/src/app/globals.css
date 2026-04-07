@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #3b82f6;
+  --color-primary-dark: #2563eb;
+  --color-secondary: #8b5cf6;
+  --color-bg-dark: #0f172a;
+  --color-bg-light: #f8fafc;
+  --color-card-dark: rgba(30, 41, 59, 0.7);
+  --color-card-light: rgba(255, 255, 255, 0.8);
+  
+  --color-risque-faible: #10b981;
+  --color-risque-modere: #f59e0b;
+  --color-risque-dangereux: #f97316;
+  --color-risque-critique: #ef4444;
+}
+
+@custom-variant dark (&:is(.dark *));
+
+/* Configuration de base */
+:root {
+  --background: var(--color-bg-light);
+  --foreground: #0f172a;
+  --card-bg: var(--color-card-light);
+  --border: #e2e8f0;
+}
+
+.dark {
+  --background: var(--color-bg-dark);
+  --foreground: #f1f5f9;
+  --card-bg: var(--color-card-dark);
+  --border: #334155;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: system-ui, -apple-system, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Utilitaires Glassmorphism */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Leaflet Map overrides pour mode sombre */
+.dark .leaflet-layer,
+.dark .leaflet-control-zoom-in,
+.dark .leaflet-control-zoom-out,
+.dark .leaflet-control-attribution {
+  filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}

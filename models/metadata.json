@@ -1,0 +1,19 @@
+{
+  "nom_modele": "XGBoost",
+  "date_entrainement": "2026-04-07T05:59:05.352227",
+  "nombre_features": 16,
+  "resultats": {
+    "Random Forest": {
+      "rmse": 0.2148,
+      "mae": 0.1333,
+      "r2": 0.998,
+      "duree_secondes": 85.28
+    },
+    "XGBoost": {
+      "rmse": 0.2069,
+      "mae": 0.132,
+      "r2": 0.9981,
+      "duree_secondes": 15.07
+    }
+  }
+}
